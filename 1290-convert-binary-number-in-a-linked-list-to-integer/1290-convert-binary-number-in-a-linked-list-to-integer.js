@@ -18,5 +18,5 @@ var getDecimalValue = function(head) {
         head = head.next;
     }
 
-    return (parseInt(result, 2));
+    return parseInt(result, 2);
 };
