@@ -5,7 +5,7 @@
  * @return {number}
  */
 var reduce = function(nums, fn, init) {
-    nums.unshift(init);
+    nums = [init, ...nums];
     let acc = init;
 
     for(let i = 0; i < nums.length - 1; i++){
