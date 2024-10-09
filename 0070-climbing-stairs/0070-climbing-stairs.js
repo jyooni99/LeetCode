@@ -3,6 +3,14 @@
  * @return {number}
  */
 var climbStairs = function(n) {
-    if(n < 2) return 1;
-    else{return climbStairs(n - 2) + climbStairs(n - 1)}
+    let memo = [0, 1, 2];
+
+    function fibo(n, memo){
+        if(memo[n] !== undefined) return memo[n];
+        memo[n] = fibo(n - 2, memo) + fibo(n - 1, memo);
+
+        return memo[n];
+    }
+
+    return fibo(n, memo);
 };
