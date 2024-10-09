@@ -10,6 +10,15 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
+ 
 var inorderTraversal = function(root) {
-    console.log(root);
+    let answer = [];
+    inorder(root);
+    function inorder(root){
+        if (root === null) return;
+        inorder(root.left);
+        answer.push(root.val);
+        inorder(root.right);
+    }
+    return answer;
 };
